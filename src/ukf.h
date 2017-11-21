@@ -106,9 +106,6 @@ class UKF {
     ///* Matrix H laser
     MatrixXd H_laser_;
 
-    ///* Matrix H jacobian (radar)
-    MatrixXd Hj_;
-
 
     /**
      * Constructor
