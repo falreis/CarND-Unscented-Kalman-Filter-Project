@@ -28,13 +28,12 @@ class UKF {
     void PredictMeanAndCovariance();
 
     /**
-     * Generic Update - Must be used in UpdateLidar and UpdateRadar
-     * @param {VectorXd} z
-     * @param {VectorXd} y
-     * @param {MatrixXd} y
-     * @param {MatrixXd} y
+     * Predict radar measurements
+     * @param z_out Out parameter to return z_pred value
+     * @param S_out Out parameter to return S matrix
+     * @param Zsig_out Out parameter to return Zsig matrix
     */
-    void GenericUpdate(const VectorXd &z, const VectorXd &y, const MatrixXd &H, const MatrixXd &R);
+    void PredictRadar(VectorXd* z_out, MatrixXd* S_out, MatrixXd* Zsig_out);
 
   public:
 
@@ -92,6 +91,9 @@ class UKF {
     ///* Augmented state dimension
     int n_aug_;
 
+    ///* Z dimension
+    int n_z_;
+
     ///* Sigma point spreading parameter
     double lambda_;
 
@@ -100,9 +102,6 @@ class UKF {
 
     ///* Matrix R laser 
     MatrixXd R_laser_;
-
-    ///* Matrix R radar
-    MatrixXd R_radar_;
 
     ///* Matrix H laser
     MatrixXd H_laser_;
