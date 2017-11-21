@@ -1,3 +1,5 @@
+//cmake -DCMAKE_BUILD_TYPE=Debug ..
+
 #include <uWS/uWS.h>
 #include <iostream>
 #include "json.hpp"

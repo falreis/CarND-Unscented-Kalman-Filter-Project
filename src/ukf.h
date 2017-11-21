@@ -11,6 +11,12 @@ using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
 class UKF {
+private:
+  /**
+   * Create Augmented sigma points
+  */
+  void AugmentedSigmaPoints();
+
 public:
 
   ///* initially set to false, set to true in first call of ProcessMeasurement
@@ -30,6 +36,9 @@ public:
 
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
+
+  ///*augmented sigma points
+  MatrixXd Xsig_aug_;
 
   ///* time when the state is true, in us
   long long time_us_;
@@ -66,6 +75,9 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+
+  ///* Constant to divide DT value 
+  static const float CONST_DT;
 
 
   /**
