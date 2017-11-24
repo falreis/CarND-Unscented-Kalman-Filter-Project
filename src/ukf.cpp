@@ -52,7 +52,7 @@ UKF::UKF() {
   std_radphi_ = 0.02;
 
   // Radar measurement noise standard deviation radius change in m/s
-  std_radrd_ = 0.5;
+  std_radrd_ = 0.7;
 
   //state dimension
   n_x_ = 5;
