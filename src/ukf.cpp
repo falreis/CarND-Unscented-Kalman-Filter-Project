@@ -91,8 +91,8 @@ UKF::UKF() {
   H_laser_ = MatrixXd(2, 5);
 
   //measurement covariance matrix - laser
-  R_laser_ << std_laspx_, 0,
-              0, std_laspy_;
+  R_laser_ << pow(std_laspx_,2), 0,
+              0, pow(std_laspy_,2);
 
   H_laser_ << 1, 0, 0, 0, 0, 
               0, 1, 0, 0, 0;
