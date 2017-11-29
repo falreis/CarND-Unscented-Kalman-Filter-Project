@@ -94,6 +94,9 @@ class UKF {
     ///* Z dimension
     int n_z_;
 
+    ///* calc of (2 * n_aug_ + 1)
+    int n_sig_;
+
     ///* Sigma point spreading parameter
     double lambda_;
 
@@ -106,6 +109,8 @@ class UKF {
     ///* Matrix H laser
     MatrixXd H_laser_;
 
+    ///* Matrix R radar 
+    MatrixXd R_radar_;
 
     /**
      * Constructor
